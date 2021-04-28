@@ -104,7 +104,7 @@ func (w *Worker) Run(ctx context.Context) {
 
 	queue := make(chan [2]string)
 	cid := w.WorkerId
-	t := randomSource.Int31()
+	t := 1 // := randomSource.Int31()
 
 	hostname, err := os.Hostname()
 	if err != nil {
