@@ -17,7 +17,8 @@ type PayloadGenerator func(i int) string
 
 func defaultPayloadGen() PayloadGenerator {
 	return func(i int) string {
-		return fmt.Sprintf("this is msg #%d!", i)
+		return fmt.Sprintf("{'mPoint':{'id':3,'name':'Laddstolpe'},'dataType':{'id':3,'name':'General inputs'},'channels':[{'name':'GI1 ','unit':'','values':[{time':'2021-04-18T09:15:36Z','value':541.88037109375}]},{'name':'GI2 ','unit':'','values':[{'time':'2021-04-18T09:15:36Z','value':847.973388671875}]},{'name':'GI3 ','unit':'','values':[{'time':'2021-04-18T09:15:36Z','value':793.03668212890625}]},{'name':'GI4 ','unit':'','values':[{'time':'2021-04-18T09:15:36Z','value':129.84014892578125}]}]}")
+		//return fmt.Sprintf("this is msg #%d!", i)
 	}
 }
 
