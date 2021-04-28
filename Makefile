@@ -51,44 +51,6 @@ build/$(appname)-linux-arm7-static: $(sources)
 	$(call static-build,linux,arm,,7)
 
 
-##### DARWIN (MAC) #####
-darwin: build/$(appname)-darwin-amd64
-
-darwin-compressed: build/$(appname)-darwin-amd64.tar.gz
-
-darwin-static: build/$(appname)-darwin-amd64-static
-
-build/$(appname)-darwin-amd64: $(sources)
-	$(call build,darwin,amd64,)
-
-build/$(appname)-darwin-amd64.tar.gz: build/$(appname)-darwin-amd64
-	$(call tar,darwin,amd64)
-
-
-build/$(appname)-darwin-amd64-static: $(sources)
-	$(call static-build,darwin,amd64,)
-
-
-##### WINDOWS #####
-
-windows: build/$(appname)-windows-amd64.exe
-
-windows-compressed: build/$(appname)-windows-amd64.zip
-
-windows-static: build/$(appname)-windows-amd64-static
-
-build/$(appname)-windows-amd64.exe: $(sources)
-	$(call build,windows,amd64,.exe)
-
-build/$(appname)-windows-amd64.zip: build/$(appname)-windows-amd64
-	$(call zip,windows,amd64,.exe)
-
-
-
-build/$(appname)-windows-amd64-static: $(sources)
-	$(call static-build,windows,amd64,)
-
-
 ##### DOCKER #####
 container: clean
 	docker build \
