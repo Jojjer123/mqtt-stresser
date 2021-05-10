@@ -20,4 +20,4 @@ LABEL org.label-schema.version=$VERSION
 COPY --from=builder /go/src/github.com/inovex/mqtt-stresser/build/mqtt-stresser-linux-amd64-static /bin/mqtt-stresser
 COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
 
-ENTRYPOINT [ "/bin/mqtt-stresser" ]
+ENTRYPOINT [ "/local/go/src/github.com/inovex/mqtt-stresser/build/mqtt-stresser" ]
