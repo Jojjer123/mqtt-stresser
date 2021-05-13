@@ -201,7 +201,7 @@ func (w *Worker) Run(ctx context.Context) {
 		token := publisher.Publish(topicName, w.PublisherQoS, w.Retained, text)
 		publishedCount++
 		token.WaitTimeout(w.Timeout)
-		time.Sleep(1)//w.PauseBetweenMessages)
+		time.Sleep(w.PauseBetweenMessages)
 	}
 	publisher.Disconnect(5)
 
